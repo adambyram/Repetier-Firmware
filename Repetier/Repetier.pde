@@ -591,6 +591,8 @@ void loop()
 #ifdef ENABLE_POLAR
   if(printer_state.usePolar==true)
   {
+  code->X += POLAR_X_ADJUST;
+  code->Y += POLAR_Y_ADJUST;
   code->X = sqrt((float)code->X*(float)code->X+(float)code->Y*(float)code->Y); //R=Sqrt(x2+y2);
   code->Y = (atan2((float)code->Y, (float)code->X)); //Theta=ArcTan(Y/X);
   }

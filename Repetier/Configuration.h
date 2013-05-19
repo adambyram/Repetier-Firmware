@@ -20,6 +20,8 @@
 #define CONFIGURATION_H
 
 #define ENABLE_POLAR true
+#define POLAR_X_ADJUST -110
+#define POLAR_Y_ADJUST -110
 
 /* Some words on units:
 
