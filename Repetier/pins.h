@@ -976,8 +976,8 @@ STEPPER_CURRENT_CONTROL
 #define Z_STEP_PIN         32
 #define Z_DIR_PIN          33
 #define Z_ENABLE_PIN       17
-#define Z_MIN_PIN          36
-#define Z_MAX_PIN          -1
+#define Z_MIN_PIN          -1
+#define Z_MAX_PIN          36
 
 #define E0_STEP_PIN         34
 #define E0_DIR_PIN          35

@@ -1027,6 +1027,19 @@ void process_command(GCode *com,byte bufferedCommand)
         update_extruder_flags();
         break;
 #endif
+    #ifdef ENABLE_POLAR
+    case 250: //PiMaker
+    { out.println_P(PSTR("Polar Mode"));
+      printer_state.usePolar=true;
+      break;
+    }
+    case 251: // no PiMaker
+    {
+      out.println_P(PSTR("Cartesian Mode"));
+      printer_state.usePolar=false;
+      break;
+    }
+#endif
     case 400: // Finish all moves
       wait_until_end_of_move();
       break;

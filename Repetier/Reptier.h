@@ -726,6 +726,7 @@ typedef struct {
   char motorY;
 #endif
   inline byte isAdvanceActivated() {return flag0 & PRINTER_FLAG0_SEPERATE_EXTRUDER_INT;}
+  byte usePolar;
 } PrinterState;
 extern PrinterState printer_state;
 

@@ -587,6 +587,15 @@ void loop()
 {
   gcode_read_serial();
   GCode *code = gcode_next_command();
+
+#ifdef ENABLE_POLAR
+  if(printer_state.usePolar==true)
+  {
+  code->X = sqrt((float)code->X*(float)code->X+(float)code->Y*(float)code->Y); //R=Sqrt(x2+y2);
+  code->Y = (atan2((float)code->Y, (float)code->X)); //Theta=ArcTan(Y/X);
+  }
+#endif
+
   //UI_SLOW; // do longer timed user interface action
   UI_MEDIUM; // do check encoder
   if(code){
